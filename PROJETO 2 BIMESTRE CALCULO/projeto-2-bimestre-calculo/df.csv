@@ -1,0 +1,73 @@
+Categoria,Marca,Modelo,Versão,Motor,Propulsão,Transmissão e Velocidades,"Ar
+Condicionado","Direção
+Assistida",Combustível,"NMOG+NOx
+(mg/km)","CO
+(mg/km)","CHO
+(mg/km)",Emissões Etanol (CO2 g/km),Emissões Gasolina/Diesel (CO2 g/km),Emissões PHEV (CO2 g/km),Consumo Etanol - Cidade (km/l),Consumo Etanol - Estrada (km/l),Consumo Gas. ou Di. - Cidade (km/l),Consumo Gas. ou Di. - Estrada (km/l),Consumo EV ou PHEV - Cidade (km/l e),Consumo EV ou PHEV - Estrada (km/l e),Consumo Energético (MJ/km),Autonomia Elétrico (km),Consumo_Cidade_L_Km,Consumo_Estrada_L_Km
+Médio,CHEVROLET,ONIX PLUS,PREMIER,1.0T - 12V,Combustão,A-6,S,E,F,42,147,6,0,99.0,,"8,5",11,12.0,15.6,\,\,1.59,\,1.0,1.0
+Médio,CHEVROLET,ONIX PLUS,LT,1.0T - 12V,Combustão,A-6,S,E,F,42,147,6,0,99.0,,"8,5",11,12.0,15.6,\,\,1.59,\,1.0,1.0
+Médio,CHEVROLET,ONIX PLUS,LTZ,1.0T - 12V,Combustão,A-6,S,E,F,42,147,6,0,99.0,,"8,5",11,12.0,15.6,\,\,1.59,\,1.0,1.0
+Médio,CHEVROLET,ONIX PLUS,AT,1.0T - 12V,Combustão,A-6,S,E,F,42,147,6,0,99.0,,"8,5",11,12.0,15.6,\,\,1.59,\,1.0,1.0
+Médio,CHEVROLET,SPIN,LS E,1.8L-8V,Combustão,M-6,S,E,F,44,656,4,0,115.0,,"7,7","8,6",11.0,12.5,\,\,1.87,\,-1.0,-1.0
+Médio,CHEVROLET,SPIN,LS2,1.8L-8V,Combustão,M-6,S,E,F,44,656,4,0,115.0,,"7,7","8,6",11.0,12.5,\,\,1.87,\,-1.0,-1.0
+Médio,CHEVROLET,SPIN,LT,1.8L-8V,Combustão,M-6,S,E,F,44,656,4,0,115.0,,"7,7","8,6",11.0,12.5,\,\,1.87,\,-1.0,-1.0
+Médio,Hyundai,HB20S,Comfort,1.0-12V T,Combustão,A-6,S,E,F,27,83,2,0,95.0,,"9,2","10,7",13.0,15.2,\,\,1.53,\,-1.0,-1.0
+Médio,Hyundai,HB20S,Platinum Safety,1.0-12V T,Combustão,A-6,S,E,F,27,83,2,0,95.0,,"9,2","10,7",13.0,15.2,\,\,1.53,\,-1.0,-1.0
+Médio,Hyundai,HB20S,SE,1.0-12V T,Combustão,A-6,S,E,F,27,83,2,0,95.0,,"9,2","10,7",13.0,15.2,\,\,1.53,\,-1.0,-1.0
+Sub Compacto,FIAT,MOBI,TREKKING,1.0-6V,Combustão,M-5,S,E,F,38,281,3,0,91.0,,"9,8","10,6",14.0,15.1,\,\,1.46,\,1.0,1.0
+Sub Compacto,FIAT,MOBI,LIKE,1.0-6V,Combustão,M-5,S,E,F,38,281,3,0,91.0,,"9,8","10,6",14.0,15.1,\,\,1.46,\,1.0,1.0
+Compacto,PEUGEOT,208,GT T200,1.0T-12V,Combustão,CVT-7,S,E,F,31,339,3,0,104.0,,"8,3","9,7",12.0,13.7,\,\,1.69,\,1.0,1.0
+Médio,CHEVROLET,ONIX,AT,1.0T - 12V,Combustão,A-6,S,E,F,43,174,6,0,101.0,,"8,2","10,5",12.0,14.8,\,\,1.65,\,1.0,1.0
+Médio,CHEVROLET,ONIX,LT,1.0T - 12V,Combustão,A-6,S,E,F,43,174,6,0,101.0,,"8,2","10,5",12.0,14.8,\,\,1.65,\,1.0,1.0
+Médio,CHEVROLET,ONIX,LTZ,1.0T - 12V,Combustão,A-6,S,E,F,43,174,6,0,101.0,,"8,2","10,5",12.0,14.8,\,\,1.65,\,1.0,1.0
+Médio,CHEVROLET,ONIX,PREMIER,1.0T - 12V,Combustão,A-6,S,E,F,43,174,6,0,101.0,,"8,2","10,5",12.0,14.8,\,\,1.65,\,1.0,1.0
+Extra Grande,BMW,320i,Active Flex,2.0 - 16V,Combustão,A-8,S,E,F,28,194,4,0,123.0,,"7,1","8,6",10.0,12.3,\,\,1.98,\,1.0,1.0
+Extra Grande,BYD,SONG PLUS,GS DM,1.5-16V,Plug-in,A-1,S,E,G,6,21,0,\,16.0,0.0,\,\,15.0,11.2,"39,5","30,2",0.58,63,-1.0,-1.0
+Extra Grande,CHEVROLET,EQUINOX,ACTIV,1.5T -16V,Combustão,A-8,S,E,G,21,140,1,\,140.0,,\,\,9.0,10.7,\,\,2.28,\,-1.0,-1.0
+Extra Grande,CHEVROLET,EQUINOX,RS,1.5T -16V,Combustão,A-8,S,E,G,21,140,1,\,140.0,,\,\,9.0,10.7,\,\,2.28,\,-1.0,-1.0
+Extra Grande,LEAPMOTOR,C10,REEV,"1.5L - 16V
+/ Eletrico",Plug-In,A-1,S,E,G,5,19,1,\,111.0,7.0,\,\,12.0,12.0,"33,5","29,1",0.65,111,1.0,1.0
+Extra Grande,Mercedes-Benz,CLA 200,AMG LINE,1.3-16V,Híbrido,DCT-7,S,E,G,33,125,3,\,104.0,,\,\,12.0,14.0,\,\,1.68,\,1.0,1.0
+Extra Grande,Mercedes-Benz,EQS 450 4M,,ELÉTRICO,Híbrido,DCT-7,S,E,G,33,125,3,\,104.0,,\,\,12.0,14.0,\,\,1.68,\,1.0,1.0
+Extra Grande,PORSCHE,MACAN,S,2.9-24V,Combustão,DCT-7,S,E,G,4,85,2,\,182.0,,\,\,7.0,8.4,\,\,2.96,\,-1.0,-1.0
+Utilitário Esportivo Compacto,CAOA CHERY,TIGGO 5X,PRO,1.5T -16V,Combustão,CVT,S,E,F,39,167,1,0,124.0,,"6,5","8,4",10.0,12.1,\,\,2.06,\,1.0,1.0
+Utilitário Esportivo Compacto,CAOA CHERY,TIGGO 5X,SPORT,1.5T -16V,Combustão,CVT,S,E,F,39,167,1,0,124.0,,"6,5","8,4",10.0,12.1,\,\,2.06,\,1.0,1.0
+Utilitário Esportivo Compacto,CHEVROLET,TRACKER (MY26),RS,1.2T - 12V,Combustão,A-6,S,E,F,18,139,2,0,111.0,,"7,6","9,7",11.0,13.7,\,\,1.8,\,-1.0,-1.0
+Utilitário Esportivo Compacto,CHEVROLET,TRACKER (MY26),PREMIER,1.2T - 12V,Combustão,A-6,S,E,F,18,139,2,0,111.0,,"7,6","9,7",11.0,13.7,\,\,1.8,\,-1.0,-1.0
+Utilitário Esportivo Compacto,CHEVROLET,TRACKER (MY26),100 ANOS,1.2T - 12V,Combustão,A-6,S,E,F,18,139,2,0,111.0,,"7,6","9,7",11.0,13.7,\,\,1.8,\,-1.0,-1.0
+Utilitário Esportivo Compacto,CHEVROLET,TRACKER (MY26),PREMIER,1.2T - 12V,Combustão,A-6,S,E,F,18,139,2,0,111.0,,"7,6","9,7",11.0,13.7,\,\,1.8,\,-1.0,-1.0
+Utilitário Esportivo Compacto,FIAT,PULSE,DRIVE AT,1.3-8V,Combustão,CVT-7,S,E,F,46,315,5,0,97.0,,"8,9","10,5",13.0,14.7,\,\,1.56,\,-1.0,-1.0
+Utilitário Esportivo Compacto,HONDA,WR-V,EX,1.5-16V,Combustão,CVT,S,E,F,22,191,1,0,108.0,,"8,2","8,9",12.0,12.8,\,\,1.76,\,1.0,1.0
+Utilitário Esportivo Compacto,HONDA,WR-V,EXL,1.5-16V,Combustão,CVT,S,E,F,22,191,1,0,108.0,,"8,2","8,9",12.0,12.8,\,\,1.76,\,1.0,1.0
+Utilitário Esportivo Compacto,Hyundai,CRETA,Comfort,1.0-12V T,Combustão,A-6,S,E,F,25,110,2,0,108.0,,"8,4",9,12.0,12.7,\,\,1.74,\,1.0,1.0
+Utilitário Esportivo Compacto,Hyundai,CRETA,Limited,1.0-12V T,Combustão,A-6,S,E,F,25,110,2,0,108.0,,"8,4",9,12.0,12.7,\,\,1.74,\,1.0,1.0
+Utilitário Esportivo Compacto,Hyundai,CRETA,Platinum,1.0-12V T,Combustão,A-6,S,E,F,25,110,2,0,108.0,,"8,4",9,12.0,12.7,\,\,1.74,\,1.0,1.0
+Utilitário Esportivo Compacto,Hyundai,CRETA,N Line,1.0-12V T,Combustão,A-6,S,E,F,25,110,2,0,108.0,,"8,4",9,12.0,12.7,\,\,1.74,\,1.0,1.0
+Utilitário Esportivo Compacto,PEUGEOT,2008,GT T200,1.0T-12V,Combustão,CVT-7,S,E,F,33,511,5,0,103.0,,"8,5","9,8",12.0,14.1,\,\,1.66,\,1.0,1.0
+Utilitário Esportivo Compacto,PEUGEOT,2008,ACT T200,1.0T-12V,Combustão,CVT-7,S,E,F,33,511,5,0,103.0,,"8,5","9,8",12.0,14.1,\,\,1.66,\,1.0,1.0
+Utilitário Esportivo Compacto,PEUGEOT,2008,ALLU T200,1.0T-12V,Combustão,CVT-7,S,E,F,33,511,5,0,103.0,,"8,5","9,8",12.0,14.1,\,\,1.66,\,1.0,1.0
+Utilitário Esportivo Grande,BMW,X2,xDrive20i MSP,2.0 - 16V,Combustão,A-7,S,E,G,10,200,1,\,122.0,,\,\,10.0,12.7,\,\,1.98,\,1.0,1.0
+Utilitário Esportivo Grande,CAOA CHERY,TIGGO 8,16TA,1.6T - 16V,Combustão,DCT-7,S,E,G,31,106,1,\,123.0,,\,\,10.0,12.5,\,\,1.99,\,1.0,1.0
+Utilitário Esportivo Grande,JEEP,COMMANDER,OVE 7 270 (MY26),1.3T-16V,Combustão,A-6,S,E,F,32,206,5,0,127.0,,"6,9","8,3",10.0,11.5,\,\,2.05,\,1.0,1.0
+Utilitário Esportivo Grande,JEEP,COMMANDER,LIM 7 270 (MY26),1.3T-16V,Combustão,A-6,S,E,F,32,206,5,0,127.0,,"6,9","8,3",10.0,11.5,\,\,2.05,\,1.0,1.0
+Utilitário Esportivo Grande,JEEP,COMMANDER,LON 7 270 (MY26),1.3T-16V,Combustão,A-6,S,E,F,32,206,5,0,127.0,,"6,9","8,3",10.0,11.5,\,\,2.05,\,1.0,1.0
+Utilitário Esportivo Grande 4x4,BMW,X4,xDrive20i,2.0 - 16V,Combustão,A-8,S,E,G,7,104,0,\,140.0,,\,\,9.0,10.8,\,\,2.26,\,-1.0,-1.0
+Utilitário Esportivo Grande 4x4,BMW,X6,xDrive40i MSP,3.0 - 24V,Híbrido,A-8,S,E,G,7,99,1,\,144.0,,\,\,9.0,10.1,\,\,2.33,\,-1.0,-1.0
+Utilitário Esportivo Grande 4x4,BMW,X6,40I MSP DARK ED,3.0 - 24V,Híbrido,A-8,S,E,G,7,99,1,\,144.0,,\,\,9.0,10.1,\,\,2.33,\,-1.0,-1.0
+Utilitário Esportivo Grande 4x4,BMW,X7,xDrive40i,3.0 - 24V,Híbrido,A-8,S,E,G,8,247,1,\,164.0,,\,\,8.0,8.7,\,\,2.66,\,1.0,1.0
+Minivan,CHEVROLET,SPIN,LT7,1.8L-8V,Combustão,M-6,S,E,F,44,656,4,0,115.0,,"7,7","8,6",11.0,12.5,\,\,1.87,\,-1.0,-1.0
+Comercial,CITROEN,JUMPER,VITRE,2.2T-16V,Combustão,M-6,S,H,D,66,33,ND,\,,,\,\,11.0,10.6,\,\,2.47,\,-1.0,-1.0
+Comercial,FIAT,DUCATO,MULTI 13M,2.2T-16V,Combustão,M-6,S,H,D,66,33,ND,\,,,\,\,11.0,10.6,\,\,2.47,\,-1.0,-1.0
+Comercial,PEUGEOT,BOXER,VIDRADA,2.2T-16V,Combustão,M-6,S,H,D,66,33,ND,\,,,\,\,11.0,10.6,\,\,2.47,\,-1.0,-1.0
+Picape,FORD,Nova F150,Tremor,5.0 - 32V,Combustão,A-10,S,E,G,42,274,1,\,209.0,,\,\,6.0,7.5,\,\,3.39,\,1.0,1.0
+Picape,JAC,HUNTER,HUNTER AT,2.0-16V,Combustão,A-8,S,E-H,D,91,26,8,\,230.0,,\,\,9.0,10.2,\,\,2.84,\,-1.0,-1.0
+Picape,JAC,HUNTER,HUNTER HD 4X4 AT,2.0-16V,Combustão,A-8,S,E-H,D,91,26,8,\,230.0,,\,\,9.0,10.2,\,\,2.84,\,-1.0,-1.0
+Picape,JAC,HUNTER,HUNTER HD AT,2.0-16V,Combustão,A-8,S,E-H,D,91,26,8,\,230.0,,\,\,9.0,10.2,\,\,2.84,\,-1.0,-1.0
+Picape,JAC,HUNTER,HUNTER HW  AT,2.0-16V,Combustão,A-8,S,E-H,D,91,26,8,\,230.0,,\,\,9.0,10.2,\,\,2.84,\,-1.0,-1.0
+Picape,RAM,1500,LARAMIE,3.0T-24V,Combustão,A-8,S,E,G,20,121,1,\,216.0,,\,\,6.0,7.0,\,\,3.5,\,1.0,1.0
+Picape,RAM,1500,LARAMIE NE,3.0T-24V,Combustão,A-8,S,E,G,20,121,1,\,216.0,,\,\,6.0,7.0,\,\,3.5,\,1.0,1.0
+Picape,RAM,1500,REBEL,3.0T-24V,Combustão,A-8,S,E,G,20,121,1,\,216.0,,\,\,6.0,7.0,\,\,3.5,\,1.0,1.0
+Esportivo,PORSCHE,911,CARRERA,3.0-24V,Combustão,DCT-8,S,E,G,12,52,0,\,173.0,,\,\,7.0,9.6,\,\,2.8,\,-1.0,-1.0
+Esportivo,PORSCHE,911,CARRERA C,3.0-24V,Combustão,DCT-8,S,E,G,12,52,0,\,173.0,,\,\,7.0,9.6,\,\,2.8,\,-1.0,-1.0
+Esportivo,PORSCHE,PANAMERA,TPHEV,4.0-32V,Plug-in,DCT-8,S,E,G,4,13,1,\,29.0,,\,\,7.0,8.7,"20,1","22,5",0.96,47,-1.0,-1.0
+Esportivo,PORSCHE,PANAMERA,4EHYB,2.9-24V,Plug-in,DCT-8,S,E,G,3,20,1,\,25.0,5.0,\,\,8.0,9.2,22,"23,3",0.9,63,1.0,1.0

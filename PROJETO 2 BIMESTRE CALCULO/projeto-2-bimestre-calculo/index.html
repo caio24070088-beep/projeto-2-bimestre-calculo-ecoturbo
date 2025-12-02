@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecoTURBO.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgb(4, 153, 4), rgb(97, 214, 51), rgb(164, 255, 18));
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: rgb(0, 71, 0);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: flex;
+            height: calc(100vh - 200px);
+        }
+
+        .sidebar {
+            width: 25%;
+            background: #ffffff;
+            padding: 20px;
+            border-right: 1px solid #10a802;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9em;
+            background: white;
+            cursor: pointer;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(rgb(47, 0, 255), rgb(41, 82, 192));
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            background: none;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+            margin: 0;
+        }
+
+        .tab-button.active {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .tab-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .car-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .car-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .car-info {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .car-info strong {
+            color: #333;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        table th {
+            background: #f8f9fa;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .filter-btn {
+            background: #0020af;
+            margin-top: 20px;
+        }
+
+        .clear-btn {
+            background: #a81501;
+            margin-top: 5px;
+        }
+
+        .priority-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .priority-buttons button {
+            margin: 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(lightgreen, lightblue, offwhite);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .comparison-table td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e9ecef;
+        }
+
+        input[type="checkbox"] {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ecoTURBO.com</h1>
+            <p>O seu catálogo de carros online!</p>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="section-title">Filtros de Busca</div>
+
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <select id="marca">
+                        <option value="">-- Todas as marcas --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="modelo">Modelo</label>
+                    <select id="modelo">
+                        <option value="">-- Todos os modelos --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="combustivel">Combustível</label>
+                    <select id="combustivel">
+                        <option value="">-- Todos --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="propulsao">Propulsão</label>
+                    <select id="propulsao">
+                        <option value="">-- Todas --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="velocidade">Velocidade (km/h)</label>
+                    <input type="number" id="velocidade" value="50" min="30" max="120" step="5">
+                </div>
+
+                <button class="filter-btn" onclick="buscarCarros()"> Buscar Carros</button>
+                <button class="clear-btn" onclick="limparFiltros()">Limpar Filtros</button>
+                <button style="background: #28a745; margin-top: 5px;" onclick="compararSelecionados()">📊 Comparar Selecionados</button>
+
+                <div class="section-title">Recomendações</div>
+                <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;">Escolha uma prioridade para recomendações:</p>
+                <div class="priority-buttons">
+                    <button onclick="obterRecomendacao('economia')">Economia</button>
+                    <button onclick="obterRecomendacao('emissoes')">Emissões</button>
+                </div>
+            </div>
+
+
+            <div class="content">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="trocarAba('busca')">Resultados de Busca</button>
+                    <button class="tab-button" onclick="trocarAba('catalogo')">Catálogo Completo</button>
+                    <button class="tab-button" onclick="trocarAba('comparacao')">Comparação</button>
+                    <button class="tab-button" onclick="trocarAba('recomendacoes')">Recomendações</button>
+                </div>
+
+                
+                <div id="busca" class="tab-content active">
+                    <div id="resultado-busca" class="results-grid">
+                        <div class="loading">Clique em "Buscar Carros" para ver resultados</div>
+                    </div>
+                </div>
+
+                
+                <div id="catalogo" class="tab-content">
+                    <div id="resultado-catalogo" class="table-container">
+                        <div class="loading">Carregando catálogo...</div>
+                    </div>
+                </div>
+
+                
+                <div id="comparacao" class="tab-content">
+                    <div id="resultado-comparacao">
+                        <div class="loading">Selecione até 4 carros para comparar</div>
+                    </div>
+                </div>
+
+                
+                <div id="recomendacoes" class="tab-content">
+                    <div id="resultado-recomendacoes">
+                        <div class="loading">Selecione prioridade e filtros, depois clique em uma opção acima</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5000/api';
+        let carrosSelecionados = [];
+
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            carregarFiltros();
+            carregarCatalogo();
+        });
+
+       
+        async function carregarFiltros() {
+            try {
+                const res = await fetch(`${API_URL}/filtros`);
+                const data = await res.json();
+
+                if (data.sucesso) {
+                    const filtros = data.filtros;
+                    
+                    document.getElementById('marca').innerHTML = '<option value="">-- Todas as marcas --</option>' +
+                        filtros.marcas.map(m => `<option value="${m}">${m}</option>`).join('');
+                    
+                    document.getElementById('combustivel').innerHTML = '<option value="">-- Todos --</option>' +
+                        filtros.combustiveis.map(c => `<option value="${c}">${c}</option>`).join('');
+                    
+                    document.getElementById('propulsao').innerHTML = '<option value="">-- Todas --</option>' +
+                        filtros.propulsoes.map(p => `<option value="${p}">${p}</option>`).join('');
+                }
+            } catch (err) {
+                console.error('Erro ao carregar filtros:', err);
+            }
+        }
+
+        async function buscarCarros() {
+            const filtros = {
+                marca: document.getElementById('marca').value,
+                modelo: document.getElementById('modelo').value,
+                combustivel: document.getElementById('combustivel').value,
+                propulsao: document.getElementById('propulsao').value,
+                velocidade: parseFloat(document.getElementById('velocidade').value) || 50
+            };
+
+            try {
+                document.getElementById('resultado-busca').innerHTML = '<div class="loading">Buscando...</div>';
+                
+                const res = await fetch(`${API_URL}/carros`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(filtros)
+                });
+
+                const data = await res.json();
+
+                if (data.sucesso) {
+                    if (data.carros.length === 0) {
+                        document.getElementById('resultado-busca').innerHTML = 
+                            '<div class="error">Nenhum carro encontrado com esses filtros.</div>';
+                    } else {
+                        const html = data.carros.map(carro => `
+                            <div class="car-card">
+                                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                    <input type="checkbox" class="car-checkbox" value="${carro['id']}" onchange="selecionarCarro(${carro['id']}, this.checked)">
+                                    <h3 style="flex: 1;">${carro['Marca']} ${carro['Modelo']}</h3>
+                                </div>
+                                <div class="car-info">
+                                    <p><strong>Versão:</strong> ${carro['Versão'] || 'N/A'}</p>
+                                    <p><strong>Combustível:</strong> <span class="badge">${carro['Combustível']}</span></p>
+                                    <p><strong>Propulsão:</strong> ${carro['Propulsão']}</p>
+                                    <p><strong>Motor:</strong> ${carro['Motor']}</p>
+                                    <p><strong>Transmissão:</strong> ${carro['Transmissão e Velocidades']}</p>
+                                    <p><strong>Emissões CO2:</strong> ${carro['Emissões Gasolina/Diesel (CO2 g/km)'] || 'N/A'} g/km</p>
+                                    <p><strong>Consumo (calculado):</strong> ${(carro.consumo_calculado || 'N/A').toFixed(2)} L/km</p>
+                                </div>
+                            </div>
+                        `).join('');
+                        document.getElementById('resultado-busca').innerHTML = html;
+                    }
+                } else {
+                    document.getElementById('resultado-busca').innerHTML = 
+                        `<div class="error">Erro: ${data.erro}</div>`;
+                }
+            } catch (err) {
+                document.getElementById('resultado-busca').innerHTML = 
+                    `<div class="error">Erro de conexão: ${err.message}</div>`;
+            }
+        }
+
+        function limparFiltros() {
+            document.getElementById('marca').value = '';
+            document.getElementById('modelo').value = '';
+            document.getElementById('combustivel').value = '';
+            document.getElementById('propulsao').value = '';
+            document.getElementById('velocidade').value = '50';
+            document.getElementById('resultado-busca').innerHTML = 
+                '<div class="loading">Clique em "Buscar Carros" para ver resultados</div>';
+        }
+
+        // ============= SELEÇÃO E COMPARAÇÃO =============
+        function selecionarCarro(id, selecionado) {
+            if (selecionado) {
+                if (carrosSelecionados.length >= 4) {
+                    alert('Máximo 4 carros para comparação!');
+                    event.target.checked = false;
+                    return;
+                }
+                carrosSelecionados.push(id);
+            } else {
+                carrosSelecionados = carrosSelecionados.filter(cid => cid !== id);
+            }
+            atualizarBotaoComparacao();
+        }
+
+        function atualizarBotaoComparacao() {
+            const btn = document.querySelector('[onclick*="compararSelecionados"]');
+            if (carrosSelecionados.length > 0) {
+                console.log('Carros selecionados:', carrosSelecionados);
+            }
+        }
+
+        async function compararSelecionados() {
+            if (carrosSelecionados.length === 0) {
+                alert('Selecione pelo menos 1 carro para comparar');
+                return;
+            }
+
+            try {
+                document.getElementById('resultado-comparacao').innerHTML = '<div class="loading">Preparando comparação...</div>';
+                trocarAba('comparacao');
+
+                const res = await fetch(`${API_URL}/carros/comparacao`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        ids: carrosSelecionados,
+                        velocidade: parseFloat(document.getElementById('velocidade').value) || 50
+                    })
+                });
+
+                const data = await res.json();
+
+                if (data.sucesso) {
+                    const carros = data.carros;
+                    let html = '<div style="overflow-x: auto;"><table class="comparison-table"><tr><th>Atributo</th>';
+                    
+                    
+                    carros.forEach(carro => {
+                        html += `<th>${carro['Marca']} ${carro['Modelo']}</th>`;
+                    });
+                    html += '</tr>';
+
+                    
+                    const atributos = [
+                        ['Versão', 'Versão'],
+                        ['Combustível', 'Combustível'],
+                        ['Propulsão', 'Propulsão'],
+                        ['Motor', 'Motor'],
+                        ['Emissões CO2 (g/km)', 'Emissões Gasolina/Diesel (CO2 g/km)'],
+                        ['Consumo (L/km)', 'consumo_calculado'],
+                        ['Derivada Consumo', 'derivada_consumo']
+                    ];
+
+                    atributos.forEach(([label, key]) => {
+                        html += `<tr><td><strong>${label}</strong></td>`;
+                        carros.forEach(carro => {
+                            const valor = carro[key];
+                            if (typeof valor === 'number' && valor > 100) {
+                                html += `<td>${valor.toFixed(2)}</td>`;
+                            } else if (typeof valor === 'number') {
+                                html += `<td>${valor.toFixed(2)}</td>`;
+                            } else {
+                                html += `<td>${valor || 'N/A'}</td>`;
+                            }
+                        });
+                        html += '</tr>';
+                    });
+
+                    html += '</table></div>';
+                    document.getElementById('resultado-comparacao').innerHTML = html;
+                } else {
+                    document.getElementById('resultado-comparacao').innerHTML = 
+                        `<div class="error">Erro: ${data.erro}</div>`;
+                }
+            } catch (err) {
+                document.getElementById('resultado-comparacao').innerHTML = 
+                    `<div class="error">Erro: ${err.message}</div>`;
+            }
+        }
+
+
+        async function carregarCatalogo() {
+            try {
+                const res = await fetch(`${API_URL}/catalogo`);
+                const data = await res.json();
+
+                if (data.sucesso) {
+                    const catalogo = data.catalogo;
+                    let html = '<table><thead><tr><th>Marca</th><th>Modelo</th><th>Versões</th><th>Combustíveis</th></tr></thead><tbody>';
+
+                    Object.entries(catalogo).forEach(([marca, modelos]) => {
+                        modelos.forEach(modelo => {
+                            html += `
+                                <tr>
+                                    <td><strong>${marca}</strong></td>
+                                    <td>${modelo.modelo}</td>
+                                    <td>${modelo.versoes}</td>
+                                    <td>${modelo.combustiveis.join(', ')}</td>
+                                </tr>
+                            `;
+                        });
+                    });
+
+                    html += '</tbody></table>';
+                    document.getElementById('resultado-catalogo').innerHTML = html;
+                }
+            } catch (err) {
+                document.getElementById('resultado-catalogo').innerHTML = 
+                    `<div class="error">Erro ao carregar catálogo: ${err.message}</div>`;
+            }
+        }
+
+
+        async function obterRecomendacao(prioridade) {
+            const filtros = {
+                marca: document.getElementById('marca').value,
+                combustivel: document.getElementById('combustivel').value
+            };
+
+            try {
+                trocarAba('recomendacoes');
+                document.getElementById('resultado-recomendacoes').innerHTML = '<div class="loading">Buscando recomendações...</div>';
+
+                const res = await fetch(`${API_URL}/carros/recomendacao`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        prioridade: prioridade,
+                        velocidade: parseFloat(document.getElementById('velocidade').value) || 50,
+                        filtros: filtros
+                    })
+                });
+
+                const data = await res.json();
+
+                if (data.sucesso) {
+                    const recomendacoes = data.recomendacoes;
+                    let html = `<div class="success">Top 5 carros recomendados por <strong>${prioridade}</strong></div>`;
+                    html += '<div class="results-grid">';
+
+                    recomendacoes.forEach((carro, idx) => {
+                        html += `
+                            <div class="car-card">
+                                <h3>#${idx + 1} - ${carro['Marca']} ${carro['Modelo']}</h3>
+                                <div class="car-info">
+                                    <p><strong>Combustível:</strong> <span class="badge">${carro['Combustível']}</span></p>
+                                    <p><strong>Propulsão:</strong> ${carro['Propulsão']}</p>
+                                    <p><strong>Motor:</strong> ${carro['Motor']}</p>
+                                    <p><strong>Emissões CO2:</strong> ${carro['Emissões Gasolina/Diesel (CO2 g/km)'] || 'N/A'} g/km</p>
+                                    <p><strong>Consumo (calculado):</strong> ${(carro.consumo_calculado || 'N/A').toFixed(2)} L/km</p>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    html += '</div>';
+                    document.getElementById('resultado-recomendacoes').innerHTML = html;
+                }
+            } catch (err) {
+                document.getElementById('resultado-recomendacoes').innerHTML = 
+                    `<div class="error">Erro: ${err.message}</div>`;
+            }
+        }
+
+
+        function trocarAba(abaId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(abaId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
